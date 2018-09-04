@@ -30,7 +30,7 @@ class Thing(Timestamp):
 	name = models.CharField(max_length=255)
 	description = models.TextField()
 	slug = models.SlugField()
-	user = models.OneToOneField(User, blank=True, null=True, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, related_name="users", blank=True, null=True, on_delete=models.CASCADE)
 
 	def get_absolute_url(self):
 		return "/things/%s/" % self.slug

@@ -12,7 +12,10 @@ def thing_detail(request, slug):
 
 	social_accounts = thing.social_accounts.all()
 
+	uploads = thing.uploads.all()
+
 	return render(request, 'things/thing_detail.html', {
 			'thing' : thing,
-			'social_accounts': social_accounts
+			'social_accounts': social_accounts,
+			'uploads': uploads,
 		})

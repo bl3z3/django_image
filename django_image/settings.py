@@ -86,7 +86,7 @@ SERVER_EMAIL = 'app_email@domain.com'
 DEFAULT_FROM_EMAIL = 'testing@example.com'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'bl3z3'
-EMAIL_HOST_PASSWORD = 'password2018'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 

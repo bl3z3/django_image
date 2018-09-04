@@ -34,3 +34,13 @@ class Thing(Timestamp):
 
 	def get_absolute_url(self):
 		return "/things/%s/" % self.slug
+
+	def __str__(self):
+		return self.name
+
+def get_image_path(instance, filename):
+	return '/'.join(['thing_images', instance.thing.slug, filename])
+
+class Upload(models.Model):
+	thing = models.ForeignKey('Thing', related_name="uploads", on_delete=models.CASCADE)
+	image = models.ImageField(upload_to=get_image_path)

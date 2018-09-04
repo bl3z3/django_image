@@ -1,5 +1,6 @@
 from django.core.mail import mail_admins
 from django.shortcuts import render
+from .models import Thing
 
 # Create your views here.
 def index(request):

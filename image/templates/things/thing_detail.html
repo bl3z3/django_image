@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
-{% if social_accounts %}
-<ul>
-	{% for social_account in social_accounts %}
-	<li>
-		<a href="http://{{ social_account.network }}.com/{{ social_account.username }}">
-			{{ social_account.network|title }}
-		</a>
-	</li>
-	{% endfor %}
-</ul>
-{% endif %}
+{% block content %}
+	{% if social_accounts %}
+	<ul>
+		{% for social_account in social_accounts %}
+		<li>
+			<a href="http://{{ social_account.network }}.com/{{ social_account.username }}">
+				{{ social_account.network|title }}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% lorem %}
+{% endblock %}

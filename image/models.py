@@ -2,7 +2,15 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-class Social(models.Model):
+class Timestamp(models.Model):
+	created = models.DateTimeField(auto_now_add=True)
+	updated = models.DateTimeField(auto_now=True)
+
+	class Meta:
+		abstract = True
+		ordering = ['created']
+
+class Social(Timestamp):
 	SOCIAL_TYPES = (
 		('twitter', 'Twitter'),
 		('facebook', 'Facebook'),
@@ -18,7 +26,7 @@ class Social(models.Model):
 	class Meta:
 		verbose_name_plural = "Social Media Links"
 
-class Thing(models.Model):
+class Thing(Timestamp):
 	name = models.CharField(max_length=255)
 	description = models.TextField()
 	slug = models.SlugField()

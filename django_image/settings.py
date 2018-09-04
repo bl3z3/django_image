@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'image',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,17 @@ DATABASES = {
     }
 }
 
+SERVER_EMAIL = 'app_email@domain.com'
+DEFAULT_FROM_EMAIL = 'testing@example.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'bl3z3'
+EMAIL_HOST_PASSWORD = 'password2018'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
+ADMINS = [
+    ('Admin Nahayo', 'patrickblaze2@gmail.com'),
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
